@@ -1,62 +1,47 @@
-* {
-  box-sizing: border-box;
-}
-
-/* CSS Custom Properties */
-:root {
-  --main-bg: #4a4e4d;
-  --top-menu-bg: #0e9aa7;
-  --sub-menu-bg: #3da4ab;
-}
-
-body {
-  font-family: Tahoma, Geneva, sans-serif;
-  height: 100vh;
+.body {
   margin: 0;
-  display: grid;
-  grid-template-rows: 3rem auto;
-  color: white;
 }
 
-.flex-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
 }
 
-.flex-around {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.topnav {
+  overflow: hidden;
+  background-color: #0a55f9;
 }
 
-nav a {
-  line-height: 3rem;
-  padding: 0 1rem;
-  text-transform: uppercase;
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: white;
-}
-#top-menu a:hover {
-  background-color: var(--sub-menu-bg);
 }
 
-header,
-#top-menu {
-  position: relative;
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
-#top-menu {
-  z-index: 20;
+
+.subnav {
+  color: #0a55f9;
 }
-#sub-menu {
+
+/* Body */
+
+.img {
   width: 100%;
-  z-index: 10;
-  transition: top 0.5s ease-out;
+  text-align: center;
 }
-#sub-menu a:hover {
-  background-color: var(--top-menu-bg);
-}
-nav a.active {
-  background-color: var(--sub-menu-bg);
-  color: var(--main-bg);
+
+.card {
+  background-color: rgba(255, 255, 255, 0.891);
+  padding: 20px;
+  margin-top: 20px;
 }
