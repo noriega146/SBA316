@@ -1,6 +1,5 @@
 import "./styles.css";
-
-document.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Cache the elements
   const textElement = document.getElementById("text");
   const buttonElement = document.getElementById("changeTextBtn");
@@ -8,6 +7,7 @@ document.addEventListener("load", function () {
 
   // Add an event listener to the button
   buttonElement.addEventListener("click", function () {
+    // modify the text 
     textElement.textContent = "Please enter your details below:";
     formElement.classList.remove("hidden");
   });
@@ -17,8 +17,11 @@ document.addEventListener("load", function () {
     event.preventDefault();
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
-    alert(`Name: ${name}\nPhone: ${phone}`);
+    // Update the text content with the entered details
     textElement.textContent = `Thank you, ${name}! We have received your phone number (${phone}).`;
-    document.body.style.backgroundColor = "red";
+    alert(`Name: ${name}\nPhone: ${phone}`);
+    formElement.parentNode.style.backgroundColor = "grey";
+    formElement.classList.add("hidden");
+    window.close;
   });
 });
