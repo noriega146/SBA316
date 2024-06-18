@@ -1,9 +1,24 @@
 import "./styles.css";
 
-const main = document.querySelector("card");
-card.innerHTML = "Hello";
-const topmenu = document.getElementById("topnav");
-topmenu.style.backgroundColor = "";
-topmenu.style.height = "100%";
+document.addEventListener("load", function () {
+  // Cache the elements
+  const textElement = document.getElementById("text");
+  const buttonElement = document.getElementById("changeTextBtn");
+  const formElement = document.getElementById("detailsForm");
 
-const submenu = document.getElementById("subnav");
+  // Add an event listener to the button
+  buttonElement.addEventListener("click", function () {
+    textElement.textContent = "Please enter your details below:";
+    formElement.classList.remove("hidden");
+  });
+
+  // Add a submit event listener to the form
+  formElement.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    alert(`Name: ${name}\nPhone: ${phone}`);
+    textElement.textContent = `Thank you, ${name}! We have received your phone number (${phone}).`;
+    document.body.style.backgroundColor = "red";
+  });
+});
